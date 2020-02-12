@@ -70,7 +70,7 @@ void vivod(int *numb,int *ind,int n)
 }
 int main()
 {
-	printf("Write number of created for array(N<100): ");
+	printf("Write number of created for array(N<100): ");	
 	int n;
 	natural(&n);
 	if ((n < 100)&&(n>0));//Контроль ввода N
@@ -89,12 +89,18 @@ int natural(int* x)
 {
 	int n;
 	do {
-		printf("\nWrite Integer!: ");
+		printf("\nWrite Natural number!: ");
 		n = scanf_s("%d", x);
 		if (n == 0)
 		{
 			printf("Input Err!\n");
 			scanf_s("%*[^\n]");
+		}
+		if (*x < 0)
+		{
+			printf("Input Err!\n");
+			scanf_s("%*[^\n]");
+			n = 0;
 		}
 	} while (n == 0);
 	n = n < 0 ? -n : n;
