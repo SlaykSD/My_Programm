@@ -83,6 +83,7 @@ int main()
 	sort(numb, ind,n);
 	vivod(numb, ind, n);
 	return 0;
+	printf("The End");
 }
 int natural(int* x)
 {
