@@ -1,0 +1,3 @@
+D:/Git_C/My_Programm/OneOOP/cmake-build-debug/CMakeFiles/OneOOP.dir
+D:/Git_C/My_Programm/OneOOP/cmake-build-debug/CMakeFiles/edit_cache.dir
+D:/Git_C/My_Programm/OneOOP/cmake-build-debug/CMakeFiles/rebuild_cache.dir
