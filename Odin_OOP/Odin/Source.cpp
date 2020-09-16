@@ -96,6 +96,7 @@ namespace Prog1 {
 			Elem->j = 0;
 			Elem->info = item;
 			std::cout << "a[i,j]: i = ";
+			//пофиксить
 			do {
 				if (getNat(Elem->i) < 0)
 					return nullptr;
