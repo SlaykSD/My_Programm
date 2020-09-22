@@ -96,38 +96,44 @@ namespace Prog1 {
 			Elem->j = 0;
 			Elem->info = item;
 			std::cout << "a[i,j]: i = ";
-			//пофиксить
-			do {
-				if (getNat(Elem->i) < 0)
-					return nullptr;
-				if (Elem->i >= M->m)
-					std::cout << "Incorrect unput,repet please: " << std::endl;
-				std::cin.sync();
-			} while (Elem->i >= M->m);
-			do {
-				std::cout << "a[i,j]: j = ";
-				if (getNat(Elem->j) < 0)
-					return nullptr;
-				if (Elem->i >= M->m)
-					std::cout << "Incorrect unput,repet please: " << std::endl;
-				std::cin.sync();
-			} while (Elem->j >= M->n);
+			Print_size(M, Elem);
 			msg = "Next information";
 			addLine(M, Elem);
 			k++;
 		} while (k < count);
 	}
-	
+	int Print_size(Mat* M,Line* Elem){
+		do {
+			if (getNat(Elem->i) < 0)
+				return -1;
+			if (Elem->i >= M->m)
+				std::cout << "Incorrect unput,repet please: " << std::endl;
+			std::cin.sync();
+			std::cout << "a[i,j]: j = ";
+			if (getNat(Elem->j) < 0)
+				return -1;
+			if (Elem->i >= M->m)
+				std::cout << "Incorrect unput,repet please: " << std::endl;
+			std::cin.sync();
+		} while ((Elem->j >= M->n)&&( Elem->i >= M->m));
+		return 0;
+	}
 	void addLine(Mat* M, Line* L)
 	{
 		if (M->lines[L->i] == nullptr)
+		{
 			M->lines[L->i] = L;
+			L->numbers = 1;
+		}
 		else
 		{ 
 			Line* ptr = M->lines[L->i];
+			tasker(M->lines[L->i], L);
 			if ((ptr->next == nullptr) && (ptr->j < L->j))
 			{
 				ptr->next = L;
+				if (ptr->info != L->info)
+					ptr->numbers += 1;
 				return;
 			}
 			else
@@ -136,11 +142,20 @@ namespace Prog1 {
 				{
 					L->next = ptr;
 					M->lines[L->i] = L;
+					if (ptr->info != L->info)
+						L->numbers = 2;
+					else
+						L->numbers = 1;
 					return;
 				}
 			}
+			int count = 0;
+			int all = 0;
 			while ((ptr->next != nullptr) && (L->j > ptr->j))
 			{
+				if (L->info != ptr->info)
+					count++;
+				all++;
 				ptr = ptr->next;
 			} 
 			if ((ptr->j > L->j))
@@ -154,6 +169,10 @@ namespace Prog1 {
 			}
 
 		}
+	}
+	int tasker(Line* Tmp, Line* NeW)
+	{
+		
 	}
 	int* Task(Mat* M)
 	{

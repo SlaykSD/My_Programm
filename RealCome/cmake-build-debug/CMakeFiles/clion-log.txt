@@ -1,0 +1,4 @@
+"D:\LionCHIK\CLion 2020.2.2\bin\cmake\win\bin\cmake.exe" -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - MinGW Makefiles" D:\Git_C\My_Programm\RealCome
+-- Configuring done
+-- Generating done
+-- Build files have been written to: D:/Git_C/My_Programm/RealCome/cmake-build-debug

@@ -1,0 +1,3 @@
+"D:\LionCHIK\CLion 2020.2.2\bin\cmake\win\bin\cmake.exe" -E rm -f CMakeFiles\RealCome.dir/objects.a
+D:\MinGW\mingw64\bin\ar.exe cr CMakeFiles\RealCome.dir/objects.a @CMakeFiles\RealCome.dir\objects1.rsp
+D:\MinGW\mingw64\bin\g++.exe -g   -Wl,--whole-archive CMakeFiles\RealCome.dir/objects.a -Wl,--no-whole-archive  -o RealCome.exe -Wl,--out-implib,libRealCome.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\RealCome.dir\linklibs.rsp

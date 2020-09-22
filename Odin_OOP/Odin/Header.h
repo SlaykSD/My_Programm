@@ -3,6 +3,7 @@ namespace Prog1 {
 	struct Line {
 		int i, j;
 		int info;
+		int numbers;
 		struct Line* next;
 	};
 
@@ -22,4 +23,6 @@ namespace Prog1 {
 	void output(Mat*, int[]);
 	int getint(int& a);
 	void output_V(int a[], int);
+	int Print_size(Mat* M, Line* Elem);
+	int tasker(Line*, Line*);
 }
