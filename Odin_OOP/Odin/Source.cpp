@@ -95,27 +95,46 @@ namespace Prog1 {
 			Elem->i = 0;
 			Elem->j = 0;
 			Elem->info = item;
-			std::cout << "a[i,j]: i = ";
 			Print_size(M, Elem);
+			if (!find(M, Elem))
+			{
+				std::cout << "This element alraedy exist" << std::endl;
+				k++;
+				msg = "Next information";
+				continue;
+			}
 			msg = "Next information";
 			addLine(M, Elem);
 			k++;
 		} while (k < count);
 	}
+	int find(Mat* M, Line* Elem)
+	{
+		Line* ptr = M->lines[Elem->i];
+		while (ptr != nullptr)
+		{
+			if (ptr->j == Elem->j)
+				return 0;
+		}
+		return 1;
+	}
 	int Print_size(Mat* M,Line* Elem){
 		do {
+			std::cout << "a[i,j]: i = ";
 			if (getNat(Elem->i) < 0)
 				return -1;
 			if (Elem->i >= M->m)
 				std::cout << "Incorrect unput,repet please: " << std::endl;
-			std::cin.sync();
+			std::cin.clear();
+		} while ((Elem->i >= M->m));
+		do{
 			std::cout << "a[i,j]: j = ";
 			if (getNat(Elem->j) < 0)
 				return -1;
-			if (Elem->i >= M->m)
+			if (Elem->j >= M->n)
 				std::cout << "Incorrect unput,repet please: " << std::endl;
-			std::cin.sync();
-		} while ((Elem->j >= M->n)&&( Elem->i >= M->m));
+			std::cin.clear();
+		} while ((Elem->j >= M->n));
 		return 0;
 	}
 	void addLine(Mat* M, Line* L)
@@ -128,7 +147,6 @@ namespace Prog1 {
 		else
 		{ 
 			Line* ptr = M->lines[L->i];
-			tasker(M->lines[L->i], L);
 			if ((ptr->next == nullptr) && (ptr->j < L->j))
 			{
 				ptr->next = L;
@@ -140,40 +158,61 @@ namespace Prog1 {
 			{
 				if (ptr->next == nullptr)
 				{
-					L->next = ptr;
-					M->lines[L->i] = L;
-					if (ptr->info != L->info)
-						L->numbers = 2;
-					else
-						L->numbers = 1;
-					return;
+				L->next = ptr;
+				M->lines[L->i] = L;
+				if (ptr->info != L->info)
+					L->numbers = 2;
+				else
+					L->numbers = 1;
+				return;
 				}
 			}
 			int count = 0;
 			int all = 0;
+			Line* tmp = M->lines[L->i];
 			while ((ptr->next != nullptr) && (L->j > ptr->j))
 			{
 				if (L->info != ptr->info)
 					count++;
+				if (all >= 1)
+				{
+					tmp = tmp->next;
+				}
 				all++;
 				ptr = ptr->next;
 			} 
 			if ((ptr->j > L->j))
 			{
-				L->next = ptr->next;
-				ptr->next = L;
+				if (tmp == M->lines[L->i]&&(M->lines[L->i]->j>(L->j)))//это корень
+				{
+					L->next = ptr;
+					M->lines[L->i] = L;
+					L->numbers = ptr->numbers;
+				}
+				else {
+					L->next = ptr;
+					tmp->next = L;
+				}
+				while (ptr != nullptr)
+				{
+					if (L->info != ptr->info)
+						count++;
+					all++;
+					ptr = ptr->next;
+				}
 			}
 			else
 			{
+				if (L->info != ptr->info)
+					count++;
+				all++;
 				ptr->next = L;
 			}
-
+			if (all == count)
+				M->lines[L->i]->numbers++;
 		}
 	}
-	int tasker(Line* Tmp, Line* NeW)
-	{
-		
-	}
+
 	int* Task(Mat* M)
 	{
 		int* a;
@@ -187,31 +226,15 @@ namespace Prog1 {
 		}
 		for (int i=0; i < M->m; ++i)
 		{
-			a[i] = 0;
-			double ar_mean;
-			Line* ptr = M->lines[i];
-			ar_mean = Average(M->lines[i]);
-			while (ptr != nullptr)
+			if (M->lines[i] != nullptr) {
+				a[i] = M->lines[i]->numbers;
+			}
+			else
 			{
-				if (ptr->info > ar_mean)
-					a[i] += ptr->info;
-				ptr = ptr->next;
+				a[i] = 0;
 			}
 		}
 		return a;
-	}
-	double Average(Line* L)
-	{
-		double sum=0;
-		int N=0;
-		Line* ptr = L;
-		while (ptr != nullptr)
-		{
-			sum += ptr->info;
-			N += 1;
-			ptr = ptr->next;
-		}
-		return sum / N;
 	}
 	void output(Mat*M, int a[])
 	{

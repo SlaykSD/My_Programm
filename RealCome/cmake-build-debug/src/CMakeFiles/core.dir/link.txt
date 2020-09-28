@@ -1,0 +1,2 @@
+D:\MinGW\mingw64\bin\ar.exe qc libcore.a  CMakeFiles/core.dir/main.cpp.obj
+D:\MinGW\mingw64\bin\ranlib.exe libcore.a

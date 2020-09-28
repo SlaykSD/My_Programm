@@ -1,0 +1,14 @@
+# Target labels
+ googletest-download
+# Source files and their labels
+/home/mikhail/CLionProjects/testProject/cmake-build-debug/googletest-download/CMakeFiles/googletest-download
+/home/mikhail/CLionProjects/testProject/cmake-build-debug/googletest-download/CMakeFiles/googletest-download.rule
+/home/mikhail/CLionProjects/testProject/cmake-build-debug/googletest-download/CMakeFiles/googletest-download-complete.rule
+/home/mikhail/CLionProjects/testProject/cmake-build-debug/googletest-download/googletest-download-prefix/src/googletest-download-stamp/googletest-download-install.rule
+/home/mikhail/CLionProjects/testProject/cmake-build-debug/googletest-download/googletest-download-prefix/src/googletest-download-stamp/googletest-download-mkdir.rule
+/home/mikhail/CLionProjects/testProject/cmake-build-debug/googletest-download/googletest-download-prefix/src/googletest-download-stamp/googletest-download-download.rule
+/home/mikhail/CLionProjects/testProject/cmake-build-debug/googletest-download/googletest-download-prefix/src/googletest-download-stamp/googletest-download-patch.rule
+/home/mikhail/CLionProjects/testProject/cmake-build-debug/googletest-download/googletest-download-prefix/src/googletest-download-stamp/googletest-download-configure.rule
+/home/mikhail/CLionProjects/testProject/cmake-build-debug/googletest-download/googletest-download-prefix/src/googletest-download-stamp/googletest-download-build.rule
+/home/mikhail/CLionProjects/testProject/cmake-build-debug/googletest-download/googletest-download-prefix/src/googletest-download-stamp/googletest-download-test.rule
+/home/mikhail/CLionProjects/testProject/cmake-build-debug/googletest-download/googletest-download-prefix/src/googletest-download-stamp/googletest-download-skip-update.rule

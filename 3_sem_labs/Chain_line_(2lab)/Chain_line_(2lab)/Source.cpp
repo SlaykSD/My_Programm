@@ -3,7 +3,7 @@
 #include <iostream>
 
 namespace Chain_Line {
-	CH_Line::CH_Line(double ad = 1) 
+	CH_Line::CH_Line(double ad) 
 	{
 		if (ad <= 0)
 			throw std::exception("Invalid height");
@@ -11,7 +11,7 @@ namespace Chain_Line {
 		CH_Line::p1.x = -1, CH_Line::p1.y = f(-1);
 		CH_Line::p2.x = 1, CH_Line::p2.y = f(1);
 	}
-	CH_Line::CH_Line(const double x1, const double x2, double ad = 1)
+	CH_Line::CH_Line(const double x1, const double x2, double ad)
 	{
 		if (ad <= 0)
 			throw std::exception("Invalid height");
@@ -28,6 +28,7 @@ namespace Chain_Line {
 		p1.x = -x1, p1.y = f(x1);
 		p2.x = x2, p2.y = f(x2);
 		correct(p1,p2);
+		return *this;
 	}
 
 	void CH_Line::correct(const Point& p1, const Point& p2)
@@ -66,6 +67,14 @@ namespace Chain_Line {
 		return  CH_Line::a * (exp(l / 2 * CH_Line::a) - exp(-l / 2 * CH_Line::a));
 
 	}
+	double CH_Line::ch(double x) const
+	{
+		return (exp(x) + exp(-x)) / 2;
+	}
+	double CH_Line::sh(double x) const
+	{
+		return (exp(x) - exp(-x)) / 2;
+	}
 	double CH_Line::L2()const
 	{
 		if ((this->p1.x * this->p2.x) < 0)//По разные стороны
@@ -81,6 +90,14 @@ namespace Chain_Line {
 	{
 		Point* p;
 		p = new Point;
-		p->x = this->a * ();
+		//Нет проверки, принадленить ли точкам кривой
+		p->x = a * (ch(x / a) * sh(x / a) + log(ch(x / a) - sh(x / a)));
+		p->y = 2 * a * ch(x / a);
+		return *p;
 	}
+	double CH_Line::Integral(void)const
+	{
+		return a * a * (sh((p2.x) / a) - sh((p1.x) / a));// a^2(sh(x2/a)- sh(x1/a))
+	}
+
 }

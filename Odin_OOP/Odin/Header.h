@@ -24,5 +24,5 @@ namespace Prog1 {
 	int getint(int& a);
 	void output_V(int a[], int);
 	int Print_size(Mat* M, Line* Elem);
-	int tasker(Line*, Line*);
+	int find(Mat*, Line*);
 }

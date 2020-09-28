@@ -72,46 +72,313 @@ CMAKE_BINARY_DIR = D:\Git_C\My_Programm\RealCome\cmake-build-debug
 # Directory level rules for the build root directory
 
 # The main recursive "all" target.
-all: CMakeFiles/RealCome.dir/all
+all: src/all
+all: Chain_lib/all
 
 .PHONY : all
 
 # The main recursive "preinstall" target.
-preinstall:
+preinstall: src/preinstall
+preinstall: Chain_lib/preinstall
 
 .PHONY : preinstall
 
 # The main recursive "clean" target.
-clean: CMakeFiles/RealCome.dir/clean
+clean: src/clean
+clean: Chain_lib/clean
 
 .PHONY : clean
 
 #=============================================================================
-# Target rules for target CMakeFiles/RealCome.dir
+# Directory level rules for directory Chain_lib
+
+# Recursive "all" directory target.
+Chain_lib/all: Chain_lib/CMakeFiles/Google_Tests_run.dir/all
+Chain_lib/all: Chain_lib/googletest-master/all
+
+.PHONY : Chain_lib/all
+
+# Recursive "preinstall" directory target.
+Chain_lib/preinstall: Chain_lib/googletest-master/preinstall
+
+.PHONY : Chain_lib/preinstall
+
+# Recursive "clean" directory target.
+Chain_lib/clean: Chain_lib/CMakeFiles/Google_Tests_run.dir/clean
+Chain_lib/clean: Chain_lib/googletest-master/clean
+
+.PHONY : Chain_lib/clean
+
+#=============================================================================
+# Directory level rules for directory Chain_lib/googletest-master
+
+# Recursive "all" directory target.
+Chain_lib/googletest-master/all: Chain_lib/googletest-master/googlemock/all
+
+.PHONY : Chain_lib/googletest-master/all
+
+# Recursive "preinstall" directory target.
+Chain_lib/googletest-master/preinstall: Chain_lib/googletest-master/googlemock/preinstall
+
+.PHONY : Chain_lib/googletest-master/preinstall
+
+# Recursive "clean" directory target.
+Chain_lib/googletest-master/clean: Chain_lib/googletest-master/googlemock/clean
+
+.PHONY : Chain_lib/googletest-master/clean
+
+#=============================================================================
+# Directory level rules for directory Chain_lib/googletest-master/googlemock
+
+# Recursive "all" directory target.
+Chain_lib/googletest-master/googlemock/all: Chain_lib/googletest-master/googlemock/CMakeFiles/gmock_main.dir/all
+Chain_lib/googletest-master/googlemock/all: Chain_lib/googletest-master/googlemock/CMakeFiles/gmock.dir/all
+Chain_lib/googletest-master/googlemock/all: Chain_lib/googletest-master/googletest/all
+
+.PHONY : Chain_lib/googletest-master/googlemock/all
+
+# Recursive "preinstall" directory target.
+Chain_lib/googletest-master/googlemock/preinstall: Chain_lib/googletest-master/googletest/preinstall
+
+.PHONY : Chain_lib/googletest-master/googlemock/preinstall
+
+# Recursive "clean" directory target.
+Chain_lib/googletest-master/googlemock/clean: Chain_lib/googletest-master/googlemock/CMakeFiles/gmock_main.dir/clean
+Chain_lib/googletest-master/googlemock/clean: Chain_lib/googletest-master/googlemock/CMakeFiles/gmock.dir/clean
+Chain_lib/googletest-master/googlemock/clean: Chain_lib/googletest-master/googletest/clean
+
+.PHONY : Chain_lib/googletest-master/googlemock/clean
+
+#=============================================================================
+# Directory level rules for directory Chain_lib/googletest-master/googletest
+
+# Recursive "all" directory target.
+Chain_lib/googletest-master/googletest/all: Chain_lib/googletest-master/googletest/CMakeFiles/gtest.dir/all
+Chain_lib/googletest-master/googletest/all: Chain_lib/googletest-master/googletest/CMakeFiles/gtest_main.dir/all
+
+.PHONY : Chain_lib/googletest-master/googletest/all
+
+# Recursive "preinstall" directory target.
+Chain_lib/googletest-master/googletest/preinstall:
+
+.PHONY : Chain_lib/googletest-master/googletest/preinstall
+
+# Recursive "clean" directory target.
+Chain_lib/googletest-master/googletest/clean: Chain_lib/googletest-master/googletest/CMakeFiles/gtest.dir/clean
+Chain_lib/googletest-master/googletest/clean: Chain_lib/googletest-master/googletest/CMakeFiles/gtest_main.dir/clean
+
+.PHONY : Chain_lib/googletest-master/googletest/clean
+
+#=============================================================================
+# Directory level rules for directory src
+
+# Recursive "all" directory target.
+src/all: src/CMakeFiles/core.dir/all
+src/all: src/CMakeFiles/main.dir/all
+
+.PHONY : src/all
+
+# Recursive "preinstall" directory target.
+src/preinstall:
+
+.PHONY : src/preinstall
+
+# Recursive "clean" directory target.
+src/clean: src/CMakeFiles/core.dir/clean
+src/clean: src/CMakeFiles/main.dir/clean
+
+.PHONY : src/clean
+
+#=============================================================================
+# Target rules for target src/CMakeFiles/core.dir
 
 # All Build rule for target.
-CMakeFiles/RealCome.dir/all:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\RealCome.dir\build.make CMakeFiles/RealCome.dir/depend
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\RealCome.dir\build.make CMakeFiles/RealCome.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=D:\Git_C\My_Programm\RealCome\cmake-build-debug\CMakeFiles --progress-num=1,2,3 "Built target RealCome"
-.PHONY : CMakeFiles/RealCome.dir/all
+src/CMakeFiles/core.dir/all:
+	$(MAKE) $(MAKESILENT) -f src\CMakeFiles\core.dir\build.make src/CMakeFiles/core.dir/depend
+	$(MAKE) $(MAKESILENT) -f src\CMakeFiles\core.dir\build.make src/CMakeFiles/core.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=D:\Git_C\My_Programm\RealCome\cmake-build-debug\CMakeFiles --progress-num=3,4 "Built target core"
+.PHONY : src/CMakeFiles/core.dir/all
 
 # Build rule for subdir invocation for target.
-CMakeFiles/RealCome.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start D:\Git_C\My_Programm\RealCome\cmake-build-debug\CMakeFiles 3
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 CMakeFiles/RealCome.dir/all
+src/CMakeFiles/core.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start D:\Git_C\My_Programm\RealCome\cmake-build-debug\CMakeFiles 2
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 src/CMakeFiles/core.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start D:\Git_C\My_Programm\RealCome\cmake-build-debug\CMakeFiles 0
-.PHONY : CMakeFiles/RealCome.dir/rule
+.PHONY : src/CMakeFiles/core.dir/rule
 
 # Convenience name for target.
-RealCome: CMakeFiles/RealCome.dir/rule
+core: src/CMakeFiles/core.dir/rule
 
-.PHONY : RealCome
+.PHONY : core
 
 # clean rule for target.
-CMakeFiles/RealCome.dir/clean:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\RealCome.dir\build.make CMakeFiles/RealCome.dir/clean
-.PHONY : CMakeFiles/RealCome.dir/clean
+src/CMakeFiles/core.dir/clean:
+	$(MAKE) $(MAKESILENT) -f src\CMakeFiles\core.dir\build.make src/CMakeFiles/core.dir/clean
+.PHONY : src/CMakeFiles/core.dir/clean
+
+#=============================================================================
+# Target rules for target src/CMakeFiles/main.dir
+
+# All Build rule for target.
+src/CMakeFiles/main.dir/all: src/CMakeFiles/core.dir/all
+	$(MAKE) $(MAKESILENT) -f src\CMakeFiles\main.dir\build.make src/CMakeFiles/main.dir/depend
+	$(MAKE) $(MAKESILENT) -f src\CMakeFiles\main.dir\build.make src/CMakeFiles/main.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=D:\Git_C\My_Programm\RealCome\cmake-build-debug\CMakeFiles --progress-num=13,14,15 "Built target main"
+.PHONY : src/CMakeFiles/main.dir/all
+
+# Build rule for subdir invocation for target.
+src/CMakeFiles/main.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start D:\Git_C\My_Programm\RealCome\cmake-build-debug\CMakeFiles 5
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 src/CMakeFiles/main.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start D:\Git_C\My_Programm\RealCome\cmake-build-debug\CMakeFiles 0
+.PHONY : src/CMakeFiles/main.dir/rule
+
+# Convenience name for target.
+main: src/CMakeFiles/main.dir/rule
+
+.PHONY : main
+
+# clean rule for target.
+src/CMakeFiles/main.dir/clean:
+	$(MAKE) $(MAKESILENT) -f src\CMakeFiles\main.dir\build.make src/CMakeFiles/main.dir/clean
+.PHONY : src/CMakeFiles/main.dir/clean
+
+#=============================================================================
+# Target rules for target Chain_lib/CMakeFiles/Google_Tests_run.dir
+
+# All Build rule for target.
+Chain_lib/CMakeFiles/Google_Tests_run.dir/all: Chain_lib/googletest-master/googletest/CMakeFiles/gtest_main.dir/all
+Chain_lib/CMakeFiles/Google_Tests_run.dir/all: Chain_lib/googletest-master/googletest/CMakeFiles/gtest.dir/all
+	$(MAKE) $(MAKESILENT) -f Chain_lib\CMakeFiles\Google_Tests_run.dir\build.make Chain_lib/CMakeFiles/Google_Tests_run.dir/depend
+	$(MAKE) $(MAKESILENT) -f Chain_lib\CMakeFiles\Google_Tests_run.dir\build.make Chain_lib/CMakeFiles/Google_Tests_run.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=D:\Git_C\My_Programm\RealCome\cmake-build-debug\CMakeFiles --progress-num=1,2 "Built target Google_Tests_run"
+.PHONY : Chain_lib/CMakeFiles/Google_Tests_run.dir/all
+
+# Build rule for subdir invocation for target.
+Chain_lib/CMakeFiles/Google_Tests_run.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start D:\Git_C\My_Programm\RealCome\cmake-build-debug\CMakeFiles 6
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 Chain_lib/CMakeFiles/Google_Tests_run.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start D:\Git_C\My_Programm\RealCome\cmake-build-debug\CMakeFiles 0
+.PHONY : Chain_lib/CMakeFiles/Google_Tests_run.dir/rule
+
+# Convenience name for target.
+Google_Tests_run: Chain_lib/CMakeFiles/Google_Tests_run.dir/rule
+
+.PHONY : Google_Tests_run
+
+# clean rule for target.
+Chain_lib/CMakeFiles/Google_Tests_run.dir/clean:
+	$(MAKE) $(MAKESILENT) -f Chain_lib\CMakeFiles\Google_Tests_run.dir\build.make Chain_lib/CMakeFiles/Google_Tests_run.dir/clean
+.PHONY : Chain_lib/CMakeFiles/Google_Tests_run.dir/clean
+
+#=============================================================================
+# Target rules for target Chain_lib/googletest-master/googlemock/CMakeFiles/gmock_main.dir
+
+# All Build rule for target.
+Chain_lib/googletest-master/googlemock/CMakeFiles/gmock_main.dir/all: Chain_lib/googletest-master/googlemock/CMakeFiles/gmock.dir/all
+Chain_lib/googletest-master/googlemock/CMakeFiles/gmock_main.dir/all: Chain_lib/googletest-master/googletest/CMakeFiles/gtest.dir/all
+	$(MAKE) $(MAKESILENT) -f Chain_lib\googletest-master\googlemock\CMakeFiles\gmock_main.dir\build.make Chain_lib/googletest-master/googlemock/CMakeFiles/gmock_main.dir/depend
+	$(MAKE) $(MAKESILENT) -f Chain_lib\googletest-master\googlemock\CMakeFiles\gmock_main.dir\build.make Chain_lib/googletest-master/googlemock/CMakeFiles/gmock_main.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=D:\Git_C\My_Programm\RealCome\cmake-build-debug\CMakeFiles --progress-num=7,8 "Built target gmock_main"
+.PHONY : Chain_lib/googletest-master/googlemock/CMakeFiles/gmock_main.dir/all
+
+# Build rule for subdir invocation for target.
+Chain_lib/googletest-master/googlemock/CMakeFiles/gmock_main.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start D:\Git_C\My_Programm\RealCome\cmake-build-debug\CMakeFiles 6
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 Chain_lib/googletest-master/googlemock/CMakeFiles/gmock_main.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start D:\Git_C\My_Programm\RealCome\cmake-build-debug\CMakeFiles 0
+.PHONY : Chain_lib/googletest-master/googlemock/CMakeFiles/gmock_main.dir/rule
+
+# Convenience name for target.
+gmock_main: Chain_lib/googletest-master/googlemock/CMakeFiles/gmock_main.dir/rule
+
+.PHONY : gmock_main
+
+# clean rule for target.
+Chain_lib/googletest-master/googlemock/CMakeFiles/gmock_main.dir/clean:
+	$(MAKE) $(MAKESILENT) -f Chain_lib\googletest-master\googlemock\CMakeFiles\gmock_main.dir\build.make Chain_lib/googletest-master/googlemock/CMakeFiles/gmock_main.dir/clean
+.PHONY : Chain_lib/googletest-master/googlemock/CMakeFiles/gmock_main.dir/clean
+
+#=============================================================================
+# Target rules for target Chain_lib/googletest-master/googlemock/CMakeFiles/gmock.dir
+
+# All Build rule for target.
+Chain_lib/googletest-master/googlemock/CMakeFiles/gmock.dir/all: Chain_lib/googletest-master/googletest/CMakeFiles/gtest.dir/all
+	$(MAKE) $(MAKESILENT) -f Chain_lib\googletest-master\googlemock\CMakeFiles\gmock.dir\build.make Chain_lib/googletest-master/googlemock/CMakeFiles/gmock.dir/depend
+	$(MAKE) $(MAKESILENT) -f Chain_lib\googletest-master\googlemock\CMakeFiles\gmock.dir\build.make Chain_lib/googletest-master/googlemock/CMakeFiles/gmock.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=D:\Git_C\My_Programm\RealCome\cmake-build-debug\CMakeFiles --progress-num=5,6 "Built target gmock"
+.PHONY : Chain_lib/googletest-master/googlemock/CMakeFiles/gmock.dir/all
+
+# Build rule for subdir invocation for target.
+Chain_lib/googletest-master/googlemock/CMakeFiles/gmock.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start D:\Git_C\My_Programm\RealCome\cmake-build-debug\CMakeFiles 4
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 Chain_lib/googletest-master/googlemock/CMakeFiles/gmock.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start D:\Git_C\My_Programm\RealCome\cmake-build-debug\CMakeFiles 0
+.PHONY : Chain_lib/googletest-master/googlemock/CMakeFiles/gmock.dir/rule
+
+# Convenience name for target.
+gmock: Chain_lib/googletest-master/googlemock/CMakeFiles/gmock.dir/rule
+
+.PHONY : gmock
+
+# clean rule for target.
+Chain_lib/googletest-master/googlemock/CMakeFiles/gmock.dir/clean:
+	$(MAKE) $(MAKESILENT) -f Chain_lib\googletest-master\googlemock\CMakeFiles\gmock.dir\build.make Chain_lib/googletest-master/googlemock/CMakeFiles/gmock.dir/clean
+.PHONY : Chain_lib/googletest-master/googlemock/CMakeFiles/gmock.dir/clean
+
+#=============================================================================
+# Target rules for target Chain_lib/googletest-master/googletest/CMakeFiles/gtest.dir
+
+# All Build rule for target.
+Chain_lib/googletest-master/googletest/CMakeFiles/gtest.dir/all:
+	$(MAKE) $(MAKESILENT) -f Chain_lib\googletest-master\googletest\CMakeFiles\gtest.dir\build.make Chain_lib/googletest-master/googletest/CMakeFiles/gtest.dir/depend
+	$(MAKE) $(MAKESILENT) -f Chain_lib\googletest-master\googletest\CMakeFiles\gtest.dir\build.make Chain_lib/googletest-master/googletest/CMakeFiles/gtest.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=D:\Git_C\My_Programm\RealCome\cmake-build-debug\CMakeFiles --progress-num=9,10 "Built target gtest"
+.PHONY : Chain_lib/googletest-master/googletest/CMakeFiles/gtest.dir/all
+
+# Build rule for subdir invocation for target.
+Chain_lib/googletest-master/googletest/CMakeFiles/gtest.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start D:\Git_C\My_Programm\RealCome\cmake-build-debug\CMakeFiles 2
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 Chain_lib/googletest-master/googletest/CMakeFiles/gtest.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start D:\Git_C\My_Programm\RealCome\cmake-build-debug\CMakeFiles 0
+.PHONY : Chain_lib/googletest-master/googletest/CMakeFiles/gtest.dir/rule
+
+# Convenience name for target.
+gtest: Chain_lib/googletest-master/googletest/CMakeFiles/gtest.dir/rule
+
+.PHONY : gtest
+
+# clean rule for target.
+Chain_lib/googletest-master/googletest/CMakeFiles/gtest.dir/clean:
+	$(MAKE) $(MAKESILENT) -f Chain_lib\googletest-master\googletest\CMakeFiles\gtest.dir\build.make Chain_lib/googletest-master/googletest/CMakeFiles/gtest.dir/clean
+.PHONY : Chain_lib/googletest-master/googletest/CMakeFiles/gtest.dir/clean
+
+#=============================================================================
+# Target rules for target Chain_lib/googletest-master/googletest/CMakeFiles/gtest_main.dir
+
+# All Build rule for target.
+Chain_lib/googletest-master/googletest/CMakeFiles/gtest_main.dir/all: Chain_lib/googletest-master/googletest/CMakeFiles/gtest.dir/all
+	$(MAKE) $(MAKESILENT) -f Chain_lib\googletest-master\googletest\CMakeFiles\gtest_main.dir\build.make Chain_lib/googletest-master/googletest/CMakeFiles/gtest_main.dir/depend
+	$(MAKE) $(MAKESILENT) -f Chain_lib\googletest-master\googletest\CMakeFiles\gtest_main.dir\build.make Chain_lib/googletest-master/googletest/CMakeFiles/gtest_main.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=D:\Git_C\My_Programm\RealCome\cmake-build-debug\CMakeFiles --progress-num=11,12 "Built target gtest_main"
+.PHONY : Chain_lib/googletest-master/googletest/CMakeFiles/gtest_main.dir/all
+
+# Build rule for subdir invocation for target.
+Chain_lib/googletest-master/googletest/CMakeFiles/gtest_main.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start D:\Git_C\My_Programm\RealCome\cmake-build-debug\CMakeFiles 4
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 Chain_lib/googletest-master/googletest/CMakeFiles/gtest_main.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start D:\Git_C\My_Programm\RealCome\cmake-build-debug\CMakeFiles 0
+.PHONY : Chain_lib/googletest-master/googletest/CMakeFiles/gtest_main.dir/rule
+
+# Convenience name for target.
+gtest_main: Chain_lib/googletest-master/googletest/CMakeFiles/gtest_main.dir/rule
+
+.PHONY : gtest_main
+
+# clean rule for target.
+Chain_lib/googletest-master/googletest/CMakeFiles/gtest_main.dir/clean:
+	$(MAKE) $(MAKESILENT) -f Chain_lib\googletest-master\googletest\CMakeFiles\gtest_main.dir\build.make Chain_lib/googletest-master/googletest/CMakeFiles/gtest_main.dir/clean
+.PHONY : Chain_lib/googletest-master/googletest/CMakeFiles/gtest_main.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.

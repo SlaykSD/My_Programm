@@ -1,0 +1,1 @@
+/usr/bin/c++  -g   CMakeFiles/runUnitTests.dir/gtest.cpp.o  -o runUnitTests  ../lib/libgtestd.a ../lib/libgmockd.a ../src/libcore.a ../lib/libgtestd.a 
