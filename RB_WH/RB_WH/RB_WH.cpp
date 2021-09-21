@@ -5,6 +5,8 @@
 #include <stdio.h>
 #include <malloc.h>
 #include <ctime>
+#include <string.h> 
+
 //Расскраска дерева
 #define RED 0
 #define BLACK 1

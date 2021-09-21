@@ -1,0 +1,166 @@
+Input file name:test2
+
+Dublicate key was not found
+Dublicate key was not found
+Dublicate key was not found
+Dublicate key was not found
+Dublicate key was not found
+0->Exit
+1->Insert
+2->Search
+3->Delete
+4->Show
+5->Show as TREE
+6->Timing RBLL
+Make your choise:1
+
+Write key:23
+
+Write Information(String):23
+
+Write Information(float):2
+
+Dublicate key was not found
+Insert was successful
+0->Exit
+1->Insert
+2->Search
+3->Delete
+4->Show
+5->Show as TREE
+6->Timing RBLL
+Make your choise:1
+
+Write key:2
+
+Write Information(String):3134
+
+Write Information(float):1
+
+Insert was successful
+0->Exit
+1->Insert
+2->Search
+3->Delete
+4->Show
+5->Show as TREE
+6->Timing RBLL
+Make your choise:1
+
+Write key:23
+
+Write Information(String):34
+
+Write Information(float):234
+
+Insert was successful
+0->Exit
+1->Insert
+2->Search
+3->Delete
+4->Show
+5->Show as TREE
+6->Timing RBLL
+Make your choise:1
+
+Write key:-2323
+
+Write Information(String):23
+
+Write Information(float):23
+
+Dublicate key was not found
+Insert was successful
+0->Exit
+1->Insert
+2->Search
+3->Delete
+4->Show
+5->Show as TREE
+6->Timing RBLL
+Make your choise:1
+
+Write key:88838
+
+Write Information(String):2
+
+Write Information(float):32
+
+Dublicate key was not found
+Insert was successful
+0->Exit
+1->Insert
+2->Search
+3->Delete
+4->Show
+5->Show as TREE
+6->Timing RBLL
+Make your choise:1
+
+Write key:332
+
+Write Information(String):1
+
+Write Information(float):23
+
+Dublicate key was not found
+Insert was successful
+0->Exit
+1->Insert
+2->Search
+3->Delete
+4->Show
+5->Show as TREE
+6->Timing RBLL
+Make your choise:5
+Tree:
+      1;1;4;23.000000l
+   2;0;3;213.000000l
+         22;0;11;33.000000l
+      23;1;23;2.000000l
+123;1;23;32.000000l
+         213;0;2;32.000000l
+      332;1;1;23.000000l
+   88838;0;2;32.000000l
+      -2323;1;23;23.000000l
+
+0->Exit
+1->Insert
+2->Search
+3->Delete
+4->Show
+5->Show as TREE
+6->Timing RBLL
+Make your choise:3
+
+Write key:88838
+
+This element was found in LLRB-TREE   C:
+First element have a Key-88838
+Info:|2 32.000000l|
+0->Exit
+1->Insert
+2->Search
+3->Delete
+4->Show
+5->Show as TREE
+6->Timing RBLL
+Make your choise:5
+Tree:
+      1;1;4;23.000000l
+   2;0;3;213.000000l
+            22;0;11;33.000000l
+         23;1;23;2.000000l
+      123;0;23;32.000000l
+         213;1;2;32.000000l
+332;1;1;23.000000l
+   -2323;1;23;23.000000l
+
+0->Exit
+1->Insert
+2->Search
+3->Delete
+4->Show
+5->Show as TREE
+6->Timing RBLL
+Make your choise:0

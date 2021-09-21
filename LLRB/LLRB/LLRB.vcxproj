@@ -21,8 +21,8 @@
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{6d8c6a4d-445c-43ec-aa0b-86f003eea344}</ProjectGuid>
-    <RootNamespace>Lineline</RootNamespace>
+    <ProjectGuid>{b836b6c8-d25b-43de-a02c-4440cad2ce9f}</ProjectGuid>
+    <RootNamespace>LLRB</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -139,11 +139,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Line_line.cpp" />
-    <ClCompile Include="Catenary.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="Catenary.h" />
+    <ClCompile Include="LLRB.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

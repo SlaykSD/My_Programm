@@ -25,4 +25,6 @@ namespace Prog1 {
 	void output_V(int a[], int);
 	int Print_size(Mat* M, Line* Elem);
 	int find(Mat*, Line*);
+	int find(Line*, int X);
+	int NubmberUp(Line*, int X, int );
 }

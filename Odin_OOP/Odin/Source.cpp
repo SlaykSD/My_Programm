@@ -4,23 +4,50 @@
 namespace Prog1 {
 	int getint(int& a)
 	{
-		std::cin >> a;
-		if (!std::cin.good())
-		return -1;
+		const char* msg = "";
+		bool success = false;
+		do
+		{
+			success = false;
+			std::cout << msg;
+			std::cin >> a;
+			if (!(std::cin.fail()))
+			{
+				std::cin.ignore(32767, '\n');
+				success = true;
+			}
+			else
+			{
+				msg = "Incorrect input, try again(INTEGER):  ";
+				std::cin.clear();
+				std::cin.ignore(32767, '\n');
+			}
+			std::cout << "" << std::endl;
+		} while (!success);
 		return 1;
 	}
 	int getNat(int& a)
 	{
 		const char* msg = "";
+		bool success = false ;
 		do
 		{
+			success = false;
 			std::cout << msg;
 			std::cin >> a;
-			if (!std::cin.good())
-				return -1;
+			if (!(std::cin.fail())&&(a>0))
+			{
+				std::cin.ignore(32767, '\n');
+				success = true;
+			}
+			else
+			{
+				msg = "Incorrect input, try again(Natural):  ";
+				std::cin.clear();
+				std::cin.ignore(32767, '\n');
+			}
 			std::cout << "" << std::endl;
-			msg = "Incorrect input, try again(Natural):  ";
-		} while (a<0);
+		} while (a<0 || !success);
 		return 1;
 	}
 	Mat* get_Mat()
@@ -95,6 +122,7 @@ namespace Prog1 {
 			Elem->i = 0;
 			Elem->j = 0;
 			Elem->info = item;
+			Elem->numbers = 1;
 			Print_size(M, Elem);
 			if (!find(M, Elem))
 			{
@@ -115,26 +143,27 @@ namespace Prog1 {
 		{
 			if (ptr->j == Elem->j)
 				return 0;
+			ptr = ptr->next;
 		}
 		return 1;
 	}
 	int Print_size(Mat* M,Line* Elem){
 		do {
 			std::cout << "a[i,j]: i = ";
-			if (getNat(Elem->i) < 0)
+			if (getint(Elem->i) < 0)
 				return -1;
 			if (Elem->i >= M->m)
 				std::cout << "Incorrect unput,repet please: " << std::endl;
 			std::cin.clear();
-		} while ((Elem->i >= M->m));
+		} while ((Elem->i >= M->m) || Elem->i<=0);
 		do{
 			std::cout << "a[i,j]: j = ";
-			if (getNat(Elem->j) < 0)
+			if (getint(Elem->j) < 0)
 				return -1;
 			if (Elem->j >= M->n)
 				std::cout << "Incorrect unput,repet please: " << std::endl;
 			std::cin.clear();
-		} while ((Elem->j >= M->n));
+		} while ((Elem->j >= M->n) || Elem->j <= 0);
 		return 0;
 	}
 	void addLine(Mat* M, Line* L)
@@ -150,8 +179,11 @@ namespace Prog1 {
 			if ((ptr->next == nullptr) && (ptr->j < L->j))
 			{
 				ptr->next = L;
-				if (ptr->info != L->info)
+				if (ptr->info == L->info)
+				{
+					L->numbers = 2;
 					ptr->numbers += 1;
+				}
 				return;
 			}
 			else
@@ -160,25 +192,22 @@ namespace Prog1 {
 				{
 				L->next = ptr;
 				M->lines[L->i] = L;
-				if (ptr->info != L->info)
-					L->numbers = 2;
+				if (ptr->info == L->info)
+					L->numbers = 2, ptr->numbers = 2;
 				else
 					L->numbers = 1;
 				return;
 				}
 			}
-			int count = 0;
-			int all = 0;
+			int count = find(M->lines[L->i], L->info);
 			Line* tmp = M->lines[L->i];
+			int joke = 0;;
 			while ((ptr->next != nullptr) && (L->j > ptr->j))
 			{
-				if (L->info != ptr->info)
-					count++;
-				if (all >= 1)
-				{
+
+				if (joke > 0)
 					tmp = tmp->next;
-				}
-				all++;
+				joke++;
 				ptr = ptr->next;
 			} 
 			if ((ptr->j > L->j))
@@ -193,26 +222,37 @@ namespace Prog1 {
 					L->next = ptr;
 					tmp->next = L;
 				}
-				while (ptr != nullptr)
-				{
-					if (L->info != ptr->info)
-						count++;
-					all++;
-					ptr = ptr->next;
-				}
 			}
 			else
 			{
-				if (L->info != ptr->info)
-					count++;
-				all++;
 				ptr->next = L;
 			}
-			if (all == count)
-				M->lines[L->i]->numbers++;
+			if (count)
+			{
+				NubmberUp(M->lines[L->i], L->info, count);
+			}
 		}
 	}
-
+	int NubmberUp(Line* ptr, int X, int number)
+	{
+			while (ptr != nullptr)
+			{
+				if (X == ptr->info)
+					ptr->numbers = number + 1;
+				ptr = ptr->next;
+			}
+			return 0;
+	}
+	int find(Line* ptr, int X)
+	{
+		while (ptr != nullptr)
+		{
+			if (X == ptr->info)
+				return ptr->numbers;
+			ptr = ptr->next;
+		}
+		return 0;
+	}
 	int* Task(Mat* M)
 	{
 		int* a;
@@ -227,7 +267,15 @@ namespace Prog1 {
 		for (int i=0; i < M->m; ++i)
 		{
 			if (M->lines[i] != nullptr) {
-				a[i] = M->lines[i]->numbers;
+				Line* ptr = M->lines[i];
+				double ex = ptr->numbers;
+				while (ptr != nullptr)
+				{
+					if (ex < ptr->numbers)
+						ex = ptr->numbers;
+					ptr = ptr->next;
+				}
+				a[i] =ex;
 			}
 			else
 			{
